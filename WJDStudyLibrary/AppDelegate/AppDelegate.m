@@ -15,6 +15,7 @@
 #import "JDTabBarController.h"
 #import <UIImageView+WebCache.h>
 #import "JDImageCacheManager.h"
+#import "JDRSAUtil.h"
 
 @interface AppDelegate ()
 
@@ -69,6 +70,9 @@
 #pragma mark - 判断是不是首次登录或者版本更新
 - (BOOL)isFirstLauch{
     
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = @"7ppBC736jT";
+    
     //获取当前版本号
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
     NSString *currentAppVersion = infoDic[@"CFBundleShortVersionString"];
@@ -100,7 +104,7 @@
     
     //添加广告图
     /*
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDHT, 300)];
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, KSCREEN_WIDTH, 300)];
     NSString *str = @"http://upload-images.jianshu.io/upload_images/746057-6e83c64b3e1ec4d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240";
     [imageV sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"default1.jpg"]];
     [viewController.view addSubview:imageV];

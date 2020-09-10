@@ -24,8 +24,8 @@
  */
 @property(nonatomic,assign)CGFloat waterWaveWidth;
 
-@property(nonatomic,retain)CAShapeLayer *waveLayer;        //
-@property(nonatomic,retain)CADisplayLink *waveDisplaylink;  //定时器(与屏幕刷新频率一致)
+@property(nonatomic, strong) CAShapeLayer *waveLayer;        //
+@property(nonatomic, strong) CADisplayLink *waveDisplaylink;  //定时器(与屏幕刷新频率一致)
 
 @end
 
@@ -51,7 +51,7 @@
 - (void)addLayer {
    
     //设置闭环颜色
-    _waveLayer.fillColor =JDRGBColor(73, 142, 178, 0.5).CGColor;
+    _waveLayer.fillColor =JDRGBAColor(73, 142, 178, 0.5).CGColor;
     //设置边缘线的颜色
     //_firstWaveLayer.strokeColor =[UIColor blueColor].CGColor;
     

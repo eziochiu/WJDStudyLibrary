@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, assign) CGRect scanRect;
-@property (nonatomic, retain) ScanView *scanView;
+@property (nonatomic,  strong)  ScanView *scanView;
 @property (nonatomic, strong) CIDetector *detector;
 
 @end
@@ -60,7 +60,7 @@
     self.navigationItem.rightBarButtonItem = right;
     
     //扫描界面
-    _scanView = [[ScanView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDHT, SCREEN_HEIGHT-64)];
+    _scanView = [[ScanView alloc]initWithFrame:CGRectMake(0, JD_NavTopHeight, KSCREEN_WIDTH, KSCREEN_HEIGHT-64)];
     _scanRect =_scanView.scanRect;
     [self.view addSubview:_scanView];
     

@@ -13,11 +13,11 @@ static NSString *homeURL =@"https://www.jianshu.com";//@"http://naotu.baidu.com"
 //static int barHeight =49;
 @interface JDWebBrowserViewController ()<WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate>
 
-@property(nonatomic,retain) UIProgressView *progressView;
-@property(nonatomic,retain) WKWebView *webView;
-@property(nonatomic,retain) UIToolbar *toolBar;
+@property(nonatomic, strong)  UIProgressView *progressView;
+@property(nonatomic, strong)  WKWebView *webView;
+@property(nonatomic, strong)  UIToolbar *toolBar;
 @property(nonatomic,copy) NSString *urlString;
-@property(nonatomic,retain) UITextField *navTextfield;
+@property(nonatomic, strong)  UITextField *navTextfield;
 @property(nonatomic,assign) BOOL debug;
 
 @end
@@ -144,7 +144,7 @@ static NSString *homeURL =@"https://www.jianshu.com";//@"http://naotu.baidu.com"
 - (UIProgressView *)progressView
 {
     if (!_progressView) {
-        _progressView =[[UIProgressView alloc]initWithFrame:CGRectMake(0, Navigation_HEIGHT, SCREEN_WIDHT, 12)];
+        _progressView =[[UIProgressView alloc]initWithFrame:CGRectMake(0, JD_NavTopHeight, KSCREEN_WIDTH, 12)];
         _progressView.tintColor =[UIColor greenColor];
         _progressView.trackTintColor =[UIColor whiteColor];
     }

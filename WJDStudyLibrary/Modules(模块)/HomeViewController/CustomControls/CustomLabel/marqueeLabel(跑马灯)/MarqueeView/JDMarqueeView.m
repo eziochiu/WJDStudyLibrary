@@ -15,8 +15,8 @@ const int num = 3;
 
 @property (nonatomic,copy) NSString *msg; //需要展示的消息
 @property (nonatomic,assign) CGFloat textW; //文字长度
-@property (nonatomic,retain) UILabel *firstLabel; //跑马灯的两个 label
-@property (nonatomic,retain) UILabel *secondLabel;
+@property (nonatomic, strong)  UILabel *firstLabel; //跑马灯的两个 label
+@property (nonatomic, strong)  UILabel *secondLabel;
 
 @end
 
@@ -38,7 +38,7 @@ const int num = 3;
 
 - (void)createUI {
     
-    _firstLabel =[JDUtils createLabelWithFrame:CGRectZero Font:14 Text:_msg];
+    _firstLabel =[JDUIFactory createLabelWithFrame:CGRectZero FontSize:14 Text:_msg];
     _firstLabel.textAlignment =NSTextAlignmentLeft;
     [_firstLabel sizeToFit];
     //设置居中
@@ -50,7 +50,7 @@ const int num = 3;
     //如果文字长度大于控件宽度,则开始滚动
     if (_textW>self.sizeWidth) {
         
-        _secondLabel =[JDUtils createLabelWithFrame:_firstLabel.frame Font:14 Text:_msg];
+        _secondLabel =[JDUIFactory createLabelWithFrame:_firstLabel.frame FontSize:14 Text:_msg];
         _secondLabel.textAlignment =NSTextAlignmentLeft;
         _secondLabel.originX =CGRectGetMaxX(_firstLabel.frame);
         [_secondLabel sizeToFit];
